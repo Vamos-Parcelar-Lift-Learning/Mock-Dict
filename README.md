@@ -1,2 +1,2 @@
 # Mock-Dict
-API responsável por mockar os dados do DICT
+API Rest responsável por mockar os dados do DICT
