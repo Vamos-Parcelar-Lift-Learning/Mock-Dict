@@ -1,0 +1,4 @@
+{
+    "/teste/rota": "/teste",
+    "/teste/rota/:key": "/teste/:key"
+}
