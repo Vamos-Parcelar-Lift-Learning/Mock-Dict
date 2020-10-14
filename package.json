@@ -9,7 +9,7 @@
     "build": "tsc",
     "dev:server": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",
     "start": "node ./src/server.js",
-    "json-server": "json-server --watch src/db.json --middlewares src/middlewares/tokenRequest --routes src/routes.json --id 'Key'",
+    "json-server": "json-server --watch src/db.json --middlewares src/middlewares --routes src/routes.json --id 'Key'",
     "generate-data": "node ./src/generate-data.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

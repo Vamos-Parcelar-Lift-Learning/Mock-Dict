@@ -1380,6 +1380,23 @@
     },
     {
       "Key": "yXkHvue"
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "string",
+      "Key": "asd",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      }
     }
   ],
   "teste": [
