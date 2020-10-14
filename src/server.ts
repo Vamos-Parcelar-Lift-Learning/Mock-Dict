@@ -1,11 +1,16 @@
-import express from 'express';
+const middlewareToken = require('./middlewares/tokenRequest');
+import * as routes from './routes.json';
+const jsonServer = require('json-server');
 
-const app = express();
+const server = jsonServer.create();
+const port = process.env.PORT || 3000;
+const router = jsonServer.router('./db.json');
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'initial message' });
-});
+router.db._.id = 'Key';
 
-app.listen(3333, () => {
-  console.log('Run server');
-});
+server.use(jsonServer.bodyParser);
+server.use(middlewareToken);
+server.use(jsonServer.rewriter(routes));
+
+server.use(router);
+server.listen(port);
