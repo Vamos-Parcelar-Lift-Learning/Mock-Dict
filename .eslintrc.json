@@ -22,11 +22,13 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": "error",
+    "@typescript-eslint/no-var-requires": 0,
     "import/extensions": [
       "error",
       "ignorePackages",
       {
-        "ts": "never"
+        "ts": "never",
+        "js": "never"
       }
     ],
     "no-console": "off"
