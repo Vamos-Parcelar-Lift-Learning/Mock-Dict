@@ -1,5 +1,5 @@
-module.exports = (req, res, next) => {
-  console.log(`MEHTOD${req.method}`);
+const middlewareToken = (req, res, next) => {
+  console.log(`METHOD ${req.method}`);
   if (
     req.method === 'GET' ||
     (req.method !== 'GET' &&
@@ -11,3 +11,5 @@ module.exports = (req, res, next) => {
     res.json({ erro: 'Token não encontrado.' });
   }
 };
+
+export default middlewareToken;
