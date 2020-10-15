@@ -1,11 +1,12 @@
 import faker from 'faker-br';
 import fs from 'fs';
 import path from 'path';
-import db from './db';
+
+const db = require('../db.json');
 
 const keyTypeParams = ['EMAIL', 'CPF', 'CNPJ', 'PHONE'];
 
-function generateData() {
+function genData() {
   let id;
   for (id = 0; id < 10; id += 1) {
     const accountNumber = faker.random.number({ min: 10, max: 10 });
@@ -51,13 +52,11 @@ function generateData() {
       },
     });
   }
-  // console.log(db)
   const json = JSON.stringify(db);
-  fs.writeFile(path.resolve(__dirname, '/db.json'), json, err => {
+  fs.writeFile(path.resolve(__dirname, '../db.json'), json, err => {
     if (err) throw err;
     console.log('Dados gerados com sucesso');
   });
-  // return {db};
 }
 
-module.exports = generateData();
+genData();

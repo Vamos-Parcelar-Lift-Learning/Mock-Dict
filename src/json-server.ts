@@ -1,5 +1,4 @@
 import * as dotenv from 'dotenv';
-import db from './db';
 import authMiddleware from './middlewares/authMiddleware';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -7,7 +6,7 @@ const jsonServer = require('json-server');
 
 dotenv.config();
 const server = jsonServer.create();
-const router = jsonServer.router(db);
+const router = jsonServer.router('./db.json');
 const port = 3000;
 
 server.use(jsonServer.bodyParser);
