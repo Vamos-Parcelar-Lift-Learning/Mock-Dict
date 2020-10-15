@@ -1,8 +1,6 @@
 import * as dotenv from 'dotenv';
+import * as jsonServer from 'json-server';
 import authMiddleware from './middlewares/authMiddleware';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const jsonServer = require('json-server');
 
 dotenv.config();
 const server = jsonServer.create();

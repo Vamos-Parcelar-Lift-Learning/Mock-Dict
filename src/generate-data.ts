@@ -2,12 +2,12 @@ import faker from 'faker-br';
 import fs from 'fs';
 import path from 'path';
 
-const db = require('../db.json');
+import * as db from '../db.json';
 
 const keyTypeParams = ['EMAIL', 'CPF', 'CNPJ', 'PHONE'];
 
 function genData() {
-  let id;
+  let id: number;
   for (id = 0; id < 10; id += 1) {
     const accountNumber = faker.random.number({ min: 10, max: 10 });
     const accountType = 'CACC';
@@ -18,7 +18,7 @@ function genData() {
       .split('T')[0];
     const participant = faker.random.number(8);
     const keyType = keyTypeParams[Math.ceil(Math.random() * 4) - 1];
-    let key;
+    let key: string;
     if (keyType === 'PHONE') {
       key = faker.phone.phoneNumber();
     } else if (keyType === 'CPF') {
