@@ -6,8 +6,8 @@
   "author": "mrodrigues <matheus.1nascimento58@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:server": "nodemon --exec ts-node src/json-server.ts",
-    "start": "ts-node src/json-server.ts",
+    "dev:server": "nodemon --exec ts-node src/server.ts",
+    "start": "ts-node src/server.ts",
     "generate-data": "ts-node ./src/generate-data.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
