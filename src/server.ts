@@ -1,16 +1,15 @@
-const middlewareToken = require('./middlewares/tokenRequest');
-import * as routes from './routes.json';
-const jsonServer = require('json-server');
+import * as dotenv from 'dotenv';
+import * as jsonServer from 'json-server';
+import authMiddleware from './middlewares/authMiddleware';
 
+dotenv.config();
 const server = jsonServer.create();
-const port = process.env.PORT || 3000;
 const router = jsonServer.router('./db.json');
-
-router.db._.id = 'Key';
+const port = 3000;
 
 server.use(jsonServer.bodyParser);
-server.use(middlewareToken);
-server.use(jsonServer.rewriter(routes));
-
+server.use(authMiddleware);
 server.use(router);
-server.listen(port);
+server.listen(port, () => {
+  console.log(`JSON Server is running on port ${port}`);
+});
