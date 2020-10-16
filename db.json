@@ -1,3 +1,184 @@
 {
-  "api": []
+  "api": [
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "CPF",
+      "Key": "12345678910",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 1
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "CNPJ",
+      "Key": "12345678910123",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 2
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "PHONE",
+      "Key": "+5584123456789",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 3
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "PHONE",
+      "Key": "5584123456789",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 4
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "PHONE",
+      "Key": "+5584996721785",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 5
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "PHONE",
+      "Key": "+5584996721785",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 6
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "EMAIL",
+      "Key": "jacksonalves541@gmail.com",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 7
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "EMAIL",
+      "Key": "jacksonalves541@gmail.com",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 8
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "CPF",
+      "Key": "10499171462",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 9
+    },
+    {
+      "Account": {
+        "AccountNumber": "number",
+        "AccountType": "string",
+        "Branch": "number",
+        "OpeningDate": "string",
+        "Participant": "number"
+      },
+      "KeyType": "CNPJ",
+      "Key": "10499171462123",
+      "Owner": {
+        "Name": "string",
+        "TaxIdNumber": "number",
+        "Type": "string",
+        "tradeName": "string"
+      },
+      "id": 10
+    }
+  ]
 }

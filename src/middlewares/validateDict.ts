@@ -19,18 +19,22 @@ const emailValidation = keystring => {
 };
 
 const middlewareValidateDict = (req, res, next) => {
-  const keystring = req.query.Key;
+  let keystring = req.query.Key;
 
   console.log('validando chave DICT');
 
-  if (req.method === 'GET' && keystring === 'undefined') {
+  if (req.method === 'GET' && keystring) {
+    // a query string está trocando o + por " " na requisição
+    // o replace desfaz essa alteração
+    keystring = keystring.replace(' ', '+');
+    req.query.Key = keystring;
+
     if (
       cpfValidation(keystring) ||
       cnpjValidation(keystring) ||
       phoneValidation(keystring) ||
       emailValidation(keystring)
     ) {
-      console.log('DEU CERTOOOOOOOOO!');
       next();
     } else {
       res.json({ erro: 'Chave com formato inválido!' });
