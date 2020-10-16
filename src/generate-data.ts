@@ -20,7 +20,7 @@ function genData() {
     const keyType = keyTypeParams[Math.ceil(Math.random() * 4) - 1];
     let key: string;
     if (keyType === 'PHONE') {
-      key = faker.phone.phoneNumber();
+      key = faker.phone.phoneNumber('+55###########');
     } else if (keyType === 'CPF') {
       key = faker.br.cpf();
     } else if (keyType === 'CNPJ') {
