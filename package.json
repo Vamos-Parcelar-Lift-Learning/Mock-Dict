@@ -1,5 +1,5 @@
 {
-  "name": "Mock-Dict",
+  "name": "mock-dict",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:Vamos-Parcelar-Lift-Learning/Mock-Dict.git",
@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev:server": "nodemon --exec ts-node src/server.ts",
-    "generate-data": "node ./src/generate-data.js",
+    "start": "ts-node src/server.ts",
+    "generate-data": "ts-node ./src/generate-data.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

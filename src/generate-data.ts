@@ -1,12 +1,13 @@
 import faker from 'faker-br';
 import fs from 'fs';
 import path from 'path';
-import db from './db';
+
+import * as db from '../db.json';
 
 const keyTypeParams = ['EMAIL', 'CPF', 'CNPJ', 'PHONE'];
 
-function generateData() {
-  let id;
+function genData() {
+  let id: number;
   for (id = 0; id < 10; id += 1) {
     const accountNumber = faker.random.number({ min: 10, max: 10 });
     const accountType = 'CACC';
@@ -17,7 +18,7 @@ function generateData() {
       .split('T')[0];
     const participant = faker.random.number(8);
     const keyType = keyTypeParams[Math.ceil(Math.random() * 4) - 1];
-    let key;
+    let key: string;
     if (keyType === 'PHONE') {
       key = faker.phone.phoneNumber();
     } else if (keyType === 'CPF') {
@@ -51,13 +52,11 @@ function generateData() {
       },
     });
   }
-  // console.log(db)
   const json = JSON.stringify(db);
-  fs.writeFile(path.resolve(__dirname, '/db.json'), json, err => {
+  fs.writeFile(path.resolve(__dirname, '../db.json'), json, err => {
     if (err) throw err;
     console.log('Dados gerados com sucesso');
   });
-  // return {db};
 }
 
-module.exports = generateData();
+genData();
