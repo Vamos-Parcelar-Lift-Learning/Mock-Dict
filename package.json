@@ -1,20 +1,20 @@
 {
-  "name": "mock-dict",
+  "name": "Mock-Dict",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:Vamos-Parcelar-Lift-Learning/Mock-Dict.git",
   "author": "mrodrigues <matheus.1nascimento58@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:server": "nodemon --exec ts-node src/server.ts",
-    "start": "ts-node src/server.ts",
-    "generate-data": "ts-node ./src/generate-data.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev:server": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",
+    "start": "node ./src/server.js",
+    "json-server": "json-server --watch src/db.json --middlewares src/middlewares/tokenRequest --routes src/routes.json --id 'Key'",
+    "generate-data": "node ./src/generate-data.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production": "yarn tsc && node ./dist/src/server.js"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
-    "@types/json-server": "^0.14.2",
-    "@types/node": "^14.11.8",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
     "eslint": "6.8.0",
@@ -23,13 +23,13 @@
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "nodemon": "^2.0.5",
     "prettier": "^2.1.2",
     "ts-node-dev": "^1.0.0-pre.63",
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "@types/json-server": "^0.14.2",
+    "@types/node": "^14.11.8",
     "faker": "^5.1.0",
     "faker-br": "^0.3.0",
     "json-server": "^0.16.2"
