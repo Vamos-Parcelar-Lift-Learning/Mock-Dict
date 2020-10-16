@@ -1,1 +1,1 @@
-web: yarn json-server
+web: yarn start
