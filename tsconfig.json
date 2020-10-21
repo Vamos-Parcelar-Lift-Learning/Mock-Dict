@@ -11,5 +11,8 @@
   },
   "include": [
     "src/**/*.ts", "src/generate-data.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
