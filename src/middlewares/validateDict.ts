@@ -37,7 +37,7 @@ const middlewareValidateDict = (req, res, next) => {
     ) {
       next();
     } else {
-      res.json({ erro: 'Chave com formato inválido!' });
+      return res.status(400).json({ error: 'Chave com formato inválido' });
     }
   } else {
     next();
