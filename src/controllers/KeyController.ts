@@ -3,24 +3,19 @@ import { Request, Response } from 'express';
 import * as yup from 'yup';
 
 import KeysRepository from '../repositories/KeysRepository';
-// import CreateKeyService from '../services/CreateKeyService';
 
 const keysRepository = new KeysRepository();
 
 export default class KeyController {
-
   public async index(request: Request, response: Response): Promise<Response> {
-    // const keys = keysRepository.all();
-    const keys = await keysRepository.all()
-
-    console.log('chegou')
-    console.log('oq', keys)
+    const keys = await keysRepository.all();
     return response.json(keys);
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
     const { key } = request.params;
-    return response.json({key: key});
+    const keys = await keysRepository.findByKey(key);
+    return response.json(keys);
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
@@ -58,8 +53,7 @@ export default class KeyController {
       Key,
       Owner,
     });
-    console.log('keyController', key)
-  
+
     return response.json(key);
   }
 }

@@ -3,6 +3,6 @@ import keysRouter from './keys.routes';
 
 const routes = Router();
 
-routes.use('/keys', keysRouter);
+routes.use('/api', keysRouter);
 
 export default routes;

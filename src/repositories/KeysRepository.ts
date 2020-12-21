@@ -1,5 +1,5 @@
 import { uuid } from 'uuidv4';
-import { getMongoRepository, Double } from 'typeorm';
+import { getMongoRepository, MongoRepository } from 'typeorm';
 import KeySchema from '../schemas/KeySchema';
 
 interface KeyData {
@@ -10,8 +10,6 @@ interface KeyData {
   Owner: object;
 }
 
-
-
 class KeysRepository {
   private keys: KeyData[] = [];
 
@@ -19,14 +17,29 @@ class KeysRepository {
   //   this.keys = [];
   // }
 
-  // public async all(): KeyData[] {
-    public async all() {
-      const keysRepository = getMongoRepository(KeySchema, 'mongo');
-      const allKeys = await keysRepository.find();
-      return allKeys;
+  // private ormRepository = getMongoRepository(KeySchema, 'mongo');
+  // private ormRepository: KeyData[] = [];
+
+  // constructor() {
+  //   this.ormRepository = getMongoRepository(KeySchema, 'mongo');
+  // }
+
+  public async all(): Promise<KeySchema[]> {
+    const keysRepository = getMongoRepository(KeySchema, 'mongo');
+    // const allKeys = await this.ormRepository.find();
+    const allKeys = await keysRepository.find();
+    return allKeys;
+  }
+
+  public async findByKey(Key: string): Promise<KeySchema | undefined> {
+    const keysRepository = getMongoRepository(KeySchema, 'mongo');
+    // const allKeys = await this.ormRepository.find();
+    const keyFound = await keysRepository.findOne({ Key });
+    return keyFound;
   }
 
   public async create({ Account, KeyType, Key, Owner }: Omit<KeyData, 'id'>) {
+    // public async create({ Account, KeyType, Key, Owner }: Promise<Ke | undefined>) {
     const keysRepository = getMongoRepository(KeySchema, 'mongo');
     const key = {
       Account,
@@ -35,12 +48,12 @@ class KeysRepository {
       Owner,
       // id: uuid(),
     };
-    console.log('key', key)
+    console.log('key', key);
 
+    // const response = await this.ormRepository.save(key);
     const response = await keysRepository.save(key);
-    console.log('resp', response)
-    const keyResponse = {
-    }
+    // console.log('resp', response);
+    const keyResponse = {};
     return key;
   }
 }
