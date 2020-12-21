@@ -1,21 +1,17 @@
-import * as dotenv from 'dotenv';
-import * as jsonServer from 'json-server';
-import * as routes from './routes.json';
-import middlewares from './middlewares';
+import express from 'express';
+import routes from './routes/index';
 
-import errorHandler from './errors/handler';
+import './database';
 
-dotenv.config();
-const server = jsonServer.create();
-const router = jsonServer.router('./db.json');
-const port = process.env.PORT || 3000;
+const app = express();
 
-server.use(jsonServer.bodyParser);
-server.use(jsonServer.rewriter(routes));
-server.use(middlewares);
-server.use(router);
-server.use(errorHandler);
+app.use(express.json());
 
-server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
+app.use(routes);
+app.get('/', (request, response) => {
+  return response.json({msg: 'Hello Mock-Dict'})
+})
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000!');
 });
