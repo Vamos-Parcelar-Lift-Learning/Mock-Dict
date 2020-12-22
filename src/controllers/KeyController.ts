@@ -15,6 +15,9 @@ export default class KeyController {
   public async show(request: Request, response: Response): Promise<Response> {
     const { key } = request.params;
     const keys = await keysRepository.findByKey(key);
+    if (!keys) {
+      response.status(400).json({ msg: 'Key not found' });
+    }
     return response.json(keys);
   }
 
@@ -53,6 +56,10 @@ export default class KeyController {
       Key,
       Owner,
     });
+
+    if (key === 'exists') {
+      return response.status(400).json({ msg: 'Key already exists' });
+    }
 
     return response.json(key);
   }

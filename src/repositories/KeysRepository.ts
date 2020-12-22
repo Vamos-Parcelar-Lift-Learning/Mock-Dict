@@ -36,6 +36,12 @@ class KeysRepository {
       Key,
       Owner,
     };
+
+    const keyFound = await keysRepository.findOne({ Key });
+    if (keyFound) {
+      return 'exists';
+    }
+
     const keyResponse = await keysRepository.save(key);
     return keyResponse;
   }
