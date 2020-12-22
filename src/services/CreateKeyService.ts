@@ -1,5 +1,0 @@
-class CreateKeyService {
-  public execute() {
-    //
-  }
-}

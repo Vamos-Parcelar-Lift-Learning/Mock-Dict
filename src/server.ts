@@ -9,9 +9,9 @@ app.use(express.json());
 
 app.use(routes);
 app.get('/', (request, response) => {
-  return response.json({msg: 'Hello Mock-Dict'})
-})
+  return response.json({ msg: 'Hello Mock-Dict' });
+});
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server started on port 3000!');
 });
